@@ -3,7 +3,7 @@ package com.company.adapterPattern.adapter;
 import com.company.adapterPattern.adaptee.Movable;
 
 public class KoreanCar implements MovableAdapter{
-  Movable koreanCar;
+  private Movable koreanCar;
 
   public KoreanCar(Movable car) {
     koreanCar = car;

@@ -8,13 +8,13 @@ public class DefaultGameConnectionHelper extends AbstGameConnectHelper{
   }
 
   @Override
-  protected boolean authentication(String id, String password) {
+  protected boolean authorization(String id, String password) {
     System.out.println("아이디 암호 확인과정");
     return true;
   }
 
   @Override
-  protected int authorization(String userName) {
+  protected int authentication(String userName) {
     System.out.println("권한 확인");
     return 0;
   }

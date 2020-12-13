@@ -3,8 +3,8 @@ package com.company.templateMethodPattern.template;
 public abstract class AbstGameConnectHelper {
 
    protected abstract String doSecurity(String string);
-   protected abstract boolean authorization(String id, String password);
-   protected abstract int authentication(String userName);
+   protected abstract boolean authentication(String id, String password);
+   protected abstract int authorization(String userName);
    protected abstract String connection(String info);
 
    public String requestConnection(String encoded) throws Exception {
@@ -15,12 +15,12 @@ public abstract class AbstGameConnectHelper {
       //decode된 정보로 id, password 가져왔다고 가정
       String id = "aaa";
       String password = "bbb";
-      if(!authorization(id, password)) {
+      if(!authentication(id, password)) {
          throw new Exception("인증 실패");
       }
       //decode된 정보로 userName 가져왔다고 가정
       String userName = "aaa";
-      int level = authentication(userName);
+      int level = authorization(userName);
       //레벨별 로직 설정
       switch (level) {
          case 0:
